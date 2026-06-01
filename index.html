@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DEX-X: Learning Visual-Tactile Dexterous Manipulation From Human Videos with Simulated Interaction</title>
+
+  <meta name="description" content="DEX-X learns deployable visual-tactile dexterous manipulation policies from human video demonstrations via simulated interaction.">
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+<body>
+
+<main>
+
+  <header class="page-header">
+    <p class="model-name">DEX-X</p>
+    <h1 class="title">
+      Learning Visual-Tactile Dexterous Manipulation<br>
+      From Human Videos with Simulated Interaction
+    </h1>
+
+    <p class="authors">Anonymous Authors</p>
+  </header>
+
+  <section class="head-figure">
+    <figure>
+      <img src="static/images/system.png" alt="DEX-X system overview">
+      <figcaption>
+        <strong>DEX-X</strong> learns deployable visual-tactile dexterous
+        manipulation policies from human video demonstrations. It transfers
+        human hand-object interactions into simulation, where tactile-aware
+        reinforcement learning enriches visual demonstrations with contact
+        information and learns deployable manipulation policies. The
+        resulting policies transfer zero-shot to real-world grasping and
+        tool-use tasks.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="abstract">
+    <h2>Abstract</h2>
+    <p>
+      Human videos are an abundant source of dexterous manipulation behaviors,
+      but they lack tactile information that is crucial for contact-rich
+      interaction. This raises a fundamental question: can robots learn
+      deployable visual-tactile dexterous manipulation policies directly from
+      human video demonstrations?
+    </p>
+    <p>
+      We present <em>DEX-X</em>, a framework for learning visual-tactile
+      dexterous manipulation from human videos through simulation. Our key
+      insight is that simulation can serve as a tactile completion engine.
+      Given monocular human demonstrations, DEX-X reconstructs hand-object
+      interactions in simulation, where physically grounded contact dynamics
+      provide tactile supervision unavailable in the original videos.
+      Leveraging this recovered tactile information, we train visual-tactile
+      dexterous manipulation policies and distill them into deployable
+      policies operating on point-cloud observations and tactile sensing.
+    </p>
+    <p>
+      We demonstrate zero-shot sim-to-real transfer on dexterous hand-arm
+      platforms across diverse grasping and contact-rich tool-use tasks. The
+      teacher policy achieves 65.9% average success across eight tasks in
+      simulation, while the distilled visual-tactile policy achieves a 53%
+      success rate on cube picking and 23% on the challenging real-world
+      table-cleaning task, which is not achieved by existing general
+      sim-to-real manipulation systems.
+    </p>
+    <p>
+      Our results suggest that tactile completion is a critical ingredient
+      for scalable dexterous manipulation learning and provide a path toward
+      learning real-world robot skills from Internet-scale human video data.
+    </p>
+  </section>
+
+  <section class="figure">
+    <h2>Pipeline</h2>
+    <figure>
+      <img src="static/images/pipeline.png" alt="DEX-X pipeline">
+      <figcaption>
+        Overview of the DEX-X pipeline. Replace with a one- or two-sentence description.
+      </figcaption>
+    </figure>
+  </section>
+
+  <section class="videos">
+    <h2>Real-world Demonstrations</h2>
+    <div class="video-grid">
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/demo1.mp4" type="video/mp4">
+        </video>
+        <figcaption>Task 1 &mdash; description</figcaption>
+      </figure>
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/demo2.mp4" type="video/mp4">
+        </video>
+        <figcaption>Task 2 &mdash; description</figcaption>
+      </figure>
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/demo3.mp4" type="video/mp4">
+        </video>
+        <figcaption>Task 3 &mdash; description</figcaption>
+      </figure>
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/demo4.mp4" type="video/mp4">
+        </video>
+        <figcaption>Task 4 &mdash; description</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="figure">
+    <h2>Real-world Snapshots</h2>
+    <figure>
+      <img src="static/images/snapshots.png" alt="Real-world snapshots">
+      <figcaption>
+        Snapshots of real-world rollouts across tasks. Replace with a brief caption.
+      </figcaption>
+    </figure>
+  </section>
+
+  <footer>
+    <p>&copy; 2026. Page template adapted from the Nerfies project page.</p>
+  </footer>
+
+</main>
+
+</body>
+</html>
