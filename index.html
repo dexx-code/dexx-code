@@ -7,7 +7,7 @@
 
   <meta name="description" content="DEX-X learns deployable visual-tactile dexterous manipulation policies from human video demonstrations via simulated interaction.">
 
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,7 +18,6 @@
 <main>
 
   <header class="page-header">
-    <p class="model-name">DEX-X</p>
     <h1 class="title">
       Learning Visual-Tactile Dexterous Manipulation<br>
       From Human Videos with Simulated Interaction
@@ -83,9 +82,65 @@
     <figure>
       <img src="static/images/pipeline.png" alt="DEX-X pipeline">
       <figcaption>
-        Overview of the DEX-X pipeline. Replace with a one- or two-sentence description.
+        <strong>Training framework of DEX-X.</strong> After transferring human
+        demonstrations into simulation, we train a privileged state-based
+        expert using RL with demonstration references, object states, and
+        tactile contact information. The expert is then distilled into a
+        multi-task visual-tactile policy operating on a unified
+        <em>contact point cloud</em> representation, which embeds fingertip
+        tactile feedback into the scene geometry and fuses vision, touch, and
+        proprioception for policy learning. The resulting policy transfers
+        zero-shot to diverse real-world dexterous manipulation tasks.
       </figcaption>
     </figure>
+  </section>
+
+  <section class="videos">
+    <h2>Simulation Demonstrations</h2>
+    <div class="video-grid">
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/sim_squeegee.mp4" type="video/mp4">
+        </video>
+        <figcaption>Squeegee &mdash; collect sand</figcaption>
+      </figure>
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/sim_hammer.mp4" type="video/mp4">
+        </video>
+        <figcaption>Use hammer</figcaption>
+      </figure>
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/sim_cube.mp4" type="video/mp4">
+        </video>
+        <figcaption>Pick up cube</figcaption>
+      </figure>
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/sim_peg.mp4" type="video/mp4">
+        </video>
+        <figcaption>Peg insertion</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="videos">
+    <h2>Bimanual Simulation Demonstrations</h2>
+    <div class="video-grid">
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/sim_uncap_jar.mp4" type="video/mp4">
+        </video>
+        <figcaption>Uncap jar</figcaption>
+      </figure>
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/sim_handover_cup.mp4" type="video/mp4">
+        </video>
+        <figcaption>Cup handover</figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="videos">
@@ -95,30 +150,30 @@
         <video controls muted loop playsinline preload="metadata">
           <source src="static/videos/demo1.mp4" type="video/mp4">
         </video>
-        <figcaption>Task 1 &mdash; description</figcaption>
-      </figure>
-      <figure>
-        <video controls muted loop playsinline preload="metadata">
-          <source src="static/videos/demo2.mp4" type="video/mp4">
-        </video>
-        <figcaption>Task 2 &mdash; description</figcaption>
-      </figure>
-      <figure>
-        <video controls muted loop playsinline preload="metadata">
-          <source src="static/videos/demo3.mp4" type="video/mp4">
-        </video>
-        <figcaption>Task 3 &mdash; description</figcaption>
+        <figcaption>Pick Up Cube</figcaption>
       </figure>
       <figure>
         <video controls muted loop playsinline preload="metadata">
           <source src="static/videos/demo4.mp4" type="video/mp4">
         </video>
-        <figcaption>Task 4 &mdash; description</figcaption>
+        <figcaption>Pick Up Cube</figcaption>
+      </figure>
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/demo3.mp4" type="video/mp4">
+        </video>
+        <figcaption>Pick Up Squeegee and Clean Table</figcaption>
+      </figure>
+      <figure>
+        <video controls muted loop playsinline preload="metadata">
+          <source src="static/videos/demo2.mp4" type="video/mp4">
+        </video>
+        <figcaption>Pick Up Squeegee and Clean Table</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="figure">
+  <section class="figure figure--ultrawide">
     <h2>Real-world Snapshots</h2>
     <figure>
       <img src="static/images/snapshots.png" alt="Real-world snapshots">
