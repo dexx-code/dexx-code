@@ -98,7 +98,7 @@ sup {
   margin-top: 0.85rem;
   font-size: 0.92rem;
   color: var(--fg-muted);
-  text-align: center;
+  text-align: left;
   line-height: 1.55;
   max-width: var(--text-width);
   margin-left: auto;
@@ -162,7 +162,7 @@ section h2 {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: var(--fg-muted);
-  text-align: center;
+  text-align: left;
 }
 
 /* Footer */
