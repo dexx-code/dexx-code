@@ -10,46 +10,72 @@
   <link rel="icon" type="image/png" href="static/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/index.css">
 </head>
 <body>
 
-<main>
+  <div class="toc">
+    <h3>Content</h3>
+    <hr>
+    <ul>
+      <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#pipeline">Pipeline</a></li>
+      <li><a href="#hardware">Hardware Setting</a></li>
+      <li><a href="#simulation">Simulation Rollouts</a></li>
+      <li><a href="#bimanual">Bimanual Rollouts</a></li>
+      <li><a href="#real-world">Real-world Deployment</a></li>
+      <li><a href="#unseen">Unseen Objects</a></li>
+    </ul>
+  </div>
 
-  <header class="page-header">
-    <h1 class="title">
-      Learning Visual-Tactile Dexterous Manipulation From Human Videos with Simulated Interaction
-    </h1>
+  <div class="main-content">
 
-    <p class="authors">Anonymous Authors</p>
-  </header>
+    <div class="hero-text">DEX-X</div>
+    <div class="sub-hero-text">
+      Learning Visual-Tactile Dexterous Manipulation From Human Videos with
+      Simulated Interaction
+    </div>
 
-  <section class="head-figure">
-    <figure>
-      <img src="static/images/system.png" alt="DEX-X system overview">
-      <figcaption>
-        <strong>DEX-X</strong> learns deployable visual-tactile dexterous
-        manipulation policies from human video demonstrations. It transfers
-        human hand-object interactions into simulation, where tactile-aware
-        reinforcement learning enriches visual demonstrations with contact
-        information and learns deployable manipulation policies. The
-        resulting policies transfer zero-shot to real-world grasping and
-        tool-use tasks.
-      </figcaption>
-    </figure>
-  </section>
+    <!-- Authors and affiliation withheld for double-anonymous review. -->
+    <div class="authors">Anonymous Authors</div>
 
-  <section class="abstract">
-    <h2>Abstract</h2>
-    <p>
+    <img class="media figure-img" src="static/images/system.png" alt="DEX-X system overview">
+    <p class="figure-caption">
+      <b>DEX-X</b> learns deployable visual-tactile dexterous manipulation
+      policies from human video demonstrations. It transfers human hand-object
+      interactions into simulation, where tactile-aware reinforcement learning
+      enriches visual demonstrations with contact information and learns
+      deployable manipulation policies. The resulting policies transfer
+      zero-shot to real-world grasping and tool-use tasks.
+    </p>
+
+    <!-- Links withheld for double-anonymous review.
+         When a link becomes available, swap the <span class="link-pill is-pending">
+         for <a class="link-pill" href="..." target="_blank" rel="noopener"> and
+         drop the <span class="pill-note">soon</span>. -->
+    <div class="quick-links">
+      <span class="link-pill is-pending">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm0 2.5L17.5 8H14V4.5zM8 13h8v1.6H8V13zm0 3.4h8V18H8v-1.6zM8 9.6h4v1.6H8V9.6z"/></svg>
+        Paper
+        <span class="pill-note">soon</span>
+      </span>
+      <span class="link-pill is-pending">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg>
+        Code
+        <span class="pill-note">soon</span>
+      </span>
+    </div>
+
+    <div class="tagline" id="abstract">Abstract</div>
+
+    <div class="section">
       Human videos are an abundant source of dexterous manipulation behaviors,
       but they lack tactile information that is crucial for contact-rich
       interaction. This raises a fundamental question: can robots learn
-      deployable visual-tactile dexterous manipulation policies directly from
-      human video demonstrations?
-    </p>
-    <p>
+      deployable visual-tactile dexterous manipulation policies from human video
+      demonstrations without robot-side data collection?
+      <br><br>
       We present <em>DEX-X</em>, a framework for learning visual-tactile
       dexterous manipulation from human videos through simulation. Our key
       insight is that simulation can serve as a tactile completion engine.
@@ -57,212 +83,260 @@
       interactions in simulation, where physically grounded contact dynamics
       provide tactile supervision unavailable in the original videos.
       Leveraging this recovered tactile information, we train visual-tactile
-      dexterous manipulation policies and distill them into deployable
-      policies operating on point-cloud observations and tactile sensing.
-    </p>
-    <p>
+      dexterous manipulation policies and distill them into deployable policies
+      operating on point-cloud observations and tactile sensing.
+      <br><br>
       We demonstrate zero-shot sim-to-real transfer on dexterous hand-arm
       platforms across diverse grasping and contact-rich tool-use tasks. The
-      teacher policy achieves 65.9% average success across eight tasks in
-      simulation, while the distilled visual-tactile policy achieves a 53%
-      success rate on cube picking and 23% on the challenging real-world
-      table-cleaning task, which is not achieved by existing general
-      sim-to-real manipulation systems.
+      teacher policy achieves 65.9% average success across six task categories in
+      simulation, while the distilled visual-tactile policy achieves 93% success
+      on real-world cube picking and 53% on the challenging table-cleaning task.
+      Zero-shot generalization to unseen object geometries is also observed
+      across the evaluated tasks.
+      <br><br>
+      Our results suggest that simulated interaction is a key bridge between
+      human videos and deployable dexterous manipulation policies, providing the
+      missing physical supervision needed for scalable robot skill learning from
+      Internet-scale human video data.
+    </div>
+
+    <div class="tagline" id="pipeline">Pipeline</div>
+
+    <img class="media figure-img" src="static/images/pipeline.png" alt="DEX-X pipeline">
+    <p class="figure-caption">
+      <b>Training framework of DEX-X.</b> After transferring human
+      demonstrations into simulation, we train a privileged state-based expert
+      using RL with demonstration references, object states, and tactile
+      contact information. The expert is then distilled into a multi-task
+      visual-tactile policy operating on a unified <em>contact point cloud</em>
+      representation, which embeds fingertip tactile feedback into the scene
+      geometry and fuses vision, touch, and proprioception for policy learning.
+      The resulting policy transfers zero-shot to diverse real-world dexterous
+      manipulation tasks.
     </p>
-    <p>
-      Our results suggest that tactile completion is a critical ingredient
-      for scalable dexterous manipulation learning and provide a path toward
-      learning real-world robot skills from Internet-scale human video data.
+
+    <div class="tagline" id="hardware">Hardware Setting</div>
+
+    <img class="media media--narrow figure-img" src="static/images/hardware.jpg" alt="Real-world hardware setup: Franka Research 3 arm, Sharpa HA4 hand and RealSense camera">
+    <p class="figure-caption">
+      <b>Real-world hardware setup.</b> We evaluate the proposed framework on a
+      Franka Research 3 (FR3) arm with a Sharpa HA4 dexterous hand (29 DoF per
+      arm; 58 DoF in the bimanual configuration). Visual observations are
+      provided by a fixed RealSense depth camera, while tactile feedback is
+      collected from fingertip tactile sensors. All policies are trained in
+      IsaacLab and deployed at 30&thinsp;Hz.
     </p>
-  </section>
 
-  <section class="figure">
-    <h2>Pipeline</h2>
-    <figure>
-      <img src="static/images/pipeline.png" alt="DEX-X pipeline">
-      <figcaption>
-        <strong>Training framework of DEX-X.</strong> After transferring human
-        demonstrations into simulation, we train a privileged state-based
-        expert using RL with demonstration references, object states, and
-        tactile contact information. The expert is then distilled into a
-        multi-task visual-tactile policy operating on a unified
-        <em>contact point cloud</em> representation, which embeds fingertip
-        tactile feedback into the scene geometry and fuses vision, touch, and
-        proprioception for policy learning. The resulting policy transfers
-        zero-shot to diverse real-world dexterous manipulation tasks.
-      </figcaption>
-    </figure>
-  </section>
+    <div class="tagline" id="simulation">Simulation Rollouts</div>
 
-  <section class="figure figure--narrow">
-    <h2>Hardware Setting</h2>
-    <figure>
-      <img src="static/images/hardware.jpg" alt="Real-world hardware setup: Franka Research 3 arm, Sharpa HA4 hand and RealSense camera">
-      <figcaption>
-        <strong>Real-world hardware setup.</strong> We evaluate the proposed
-        framework on a Franka Research 3 (FR3) arm with a Sharpa HA4 dexterous
-        hand (29 DoF per arm; 58 DoF in the bimanual configuration). Visual
-        observations are provided by a fixed RealSense depth camera, while
-        tactile feedback is collected from fingertip tactile sensors. All
-        policies are trained in IsaacLab and deployed at 30&thinsp;Hz.
-      </figcaption>
-    </figure>
-  </section>
-
-  <section class="videos">
-    <h2>Simulation Rollouts</h2>
-    <div class="video-grid">
+    <div class="video-grid video-grid--3">
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/sim_squeegee.mp4" type="video/mp4">
         </video>
         <figcaption>Squeegee &mdash; collect sand</figcaption>
       </figure>
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/sim_rotate_squeegee.mp4" type="video/mp4">
         </video>
         <figcaption>Rotate squeegee</figcaption>
       </figure>
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/sim_hammer.mp4" type="video/mp4">
         </video>
         <figcaption>Use hammer</figcaption>
       </figure>
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/sim_cube.mp4" type="video/mp4">
         </video>
         <figcaption>Pick up cube</figcaption>
       </figure>
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/sim_pour_cup.mp4" type="video/mp4">
         </video>
         <figcaption>Pour from cup</figcaption>
       </figure>
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/sim_peg.mp4" type="video/mp4">
         </video>
         <figcaption>Peg insertion</figcaption>
       </figure>
     </div>
-  </section>
 
-  <section class="videos">
-    <h2>Bimanual Simulation Rollouts</h2>
-    <div class="video-grid">
+    <div class="tagline" id="bimanual">Bimanual Simulation Rollouts</div>
+
+    <div class="video-grid video-grid--2">
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/sim_uncap_jar.mp4" type="video/mp4">
         </video>
         <figcaption>Uncap jar</figcaption>
       </figure>
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/sim_handover_cup.mp4" type="video/mp4">
         </video>
         <figcaption>Cup handover</figcaption>
       </figure>
     </div>
-  </section>
 
-  <section class="videos">
-    <h2>Real-world Deployment</h2>
-    <div class="video-grid">
-      <figure>
-        <video controls muted loop playsinline preload="metadata">
-          <source src="static/videos/demo_pick_cube_1.mp4" type="video/mp4">
-        </video>
-        <figcaption>Pick up cube</figcaption>
-      </figure>
-      <figure>
-        <video controls muted loop playsinline preload="metadata">
-          <source src="static/videos/demo_pick_cube_2.mp4" type="video/mp4">
-        </video>
-        <figcaption>Pick up cube</figcaption>
-      </figure>
-      <figure>
-        <video controls muted loop playsinline preload="metadata">
-          <source src="static/videos/demo_pick_cup.mp4" type="video/mp4">
-        </video>
-        <figcaption>Pick up cup</figcaption>
-      </figure>
-      <figure>
-        <video controls muted loop playsinline preload="metadata">
-          <source src="static/videos/demo_pour_cup.mp4" type="video/mp4">
-        </video>
-        <figcaption>Pour from cup</figcaption>
-      </figure>
-      <figure>
-        <video controls muted loop playsinline preload="metadata">
-          <source src="static/videos/demo_hammer.mp4" type="video/mp4">
-        </video>
-        <figcaption>Manipulate hammer</figcaption>
-      </figure>
-      <figure>
-        <video controls muted loop playsinline preload="metadata">
-          <source src="static/videos/demo_rotate_squeegee.mp4" type="video/mp4">
-        </video>
-        <figcaption>Rotate squeegee</figcaption>
-      </figure>
-      <figure>
-        <video controls muted loop playsinline preload="metadata">
-          <source src="static/videos/demo_squeegee_1.mp4" type="video/mp4">
-        </video>
-        <figcaption>Squeegee &mdash; clean table</figcaption>
-      </figure>
-      <figure>
-        <video controls muted loop playsinline preload="metadata">
-          <source src="static/videos/demo_squeegee_2.mp4" type="video/mp4">
-        </video>
-        <figcaption>Squeegee &mdash; clean table</figcaption>
-      </figure>
+    <div class="tagline" id="real-world">Real-world Deployment</div>
+
+    <div class="section">
+      The distilled visual-tactile policy is deployed zero-shot on the real
+      hand-arm platform across grasping and contact-rich tool-use tasks. Scroll
+      the gallery below, or use the arrows, to browse all real-world rollouts.
     </div>
-  </section>
 
-  <section class="videos">
-    <h2>Zero-shot to Unseen Objects</h2>
-    <p class="section-note">
+    <div class="video-gallery-section">
+      <div class="video-gallery-container" id="realGallery">
+        <div class="video-gallery">
+          <figure class="gallery-item">
+            <video muted loop playsinline preload="metadata">
+              <source src="static/videos/demo_pick_cube_1.mp4" type="video/mp4">
+            </video>
+            <figcaption>Pick up cube</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <video muted loop playsinline preload="metadata">
+              <source src="static/videos/demo_pick_cube_2.mp4" type="video/mp4">
+            </video>
+            <figcaption>Pick up cube</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <video muted loop playsinline preload="metadata">
+              <source src="static/videos/demo_pick_cup.mp4" type="video/mp4">
+            </video>
+            <figcaption>Pick up cup</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <video muted loop playsinline preload="metadata">
+              <source src="static/videos/demo_pour_cup.mp4" type="video/mp4">
+            </video>
+            <figcaption>Pour from cup</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <video muted loop playsinline preload="metadata">
+              <source src="static/videos/demo_hammer.mp4" type="video/mp4">
+            </video>
+            <figcaption>Manipulate hammer</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <video muted loop playsinline preload="metadata">
+              <source src="static/videos/demo_rotate_squeegee.mp4" type="video/mp4">
+            </video>
+            <figcaption>Rotate squeegee</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <video muted loop playsinline preload="metadata">
+              <source src="static/videos/demo_squeegee_1.mp4" type="video/mp4">
+            </video>
+            <figcaption>Squeegee &mdash; clean table</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <video muted loop playsinline preload="metadata">
+              <source src="static/videos/demo_squeegee_2.mp4" type="video/mp4">
+            </video>
+            <figcaption>Squeegee &mdash; clean table</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="gallery-caption-container">
+        <div class="gallery-nav-controls">
+          <button class="gallery-nav" data-gallery="realGallery" data-dir="-1" aria-label="Scroll gallery left">&#8249;</button>
+          <button class="gallery-nav" data-gallery="realGallery" data-dir="1" aria-label="Scroll gallery right">&#8250;</button>
+        </div>
+        <p class="figure-caption gallery-caption">
+          Zero-shot real-world rollouts of the distilled visual-tactile policy
+          on the Franka&nbsp;FR3 + Sharpa&nbsp;HA4 platform.
+        </p>
+      </div>
+    </div>
+
+    <div class="tagline" id="unseen">Zero-shot to Unseen Objects</div>
+
+    <div class="section">
       The distilled visual-tactile policy is deployed without any fine-tuning on
       objects that were never seen during training, spanning novel shapes,
       colors, and material appearances.
-    </p>
-    <div class="video-grid">
+    </div>
+
+    <div class="video-grid video-grid--2">
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/unseen_blue_duck.mp4" type="video/mp4">
         </video>
         <figcaption>Blue duck</figcaption>
       </figure>
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/unseen_grey_cube.mp4" type="video/mp4">
         </video>
         <figcaption>Grey cube</figcaption>
       </figure>
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/unseen_yellow_duck.mp4" type="video/mp4">
         </video>
         <figcaption>Yellow duck</figcaption>
       </figure>
       <figure>
-        <video controls muted loop playsinline preload="metadata">
+        <video muted loop playsinline preload="metadata">
           <source src="static/videos/unseen_square_cube.mp4" type="video/mp4">
         </video>
         <figcaption>Square cube</figcaption>
       </figure>
     </div>
-  </section>
 
-  <footer>
-    <p>&copy; 2026. Page template adapted from the Nerfies project page.</p>
-  </footer>
+  </div><!-- End of main-content -->
 
-</main>
+  <div class="footer">
+    &copy; 2026. Website template modified from
+    <a href="https://videomimic.net/" target="_blank" rel="noopener">VideoMimic</a>.
+  </div>
+
+  <script>
+    // Arrow buttons scroll the gallery by roughly one viewport of items.
+    document.querySelectorAll('.gallery-nav').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var container = document.getElementById(btn.dataset.gallery);
+        var dir = parseInt(btn.dataset.dir, 10);
+        container.scrollBy({ left: dir * container.clientWidth * 0.8, behavior: 'smooth' });
+      });
+    });
+
+    // Play videos only while they are on screen, so a page with ~20 clips
+    // stays light instead of decoding everything at once.
+    var videos = document.querySelectorAll('video');
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          var v = entry.target;
+          if (entry.isIntersecting) {
+            v.play().catch(function () {});
+          } else {
+            v.pause();
+          }
+        });
+      }, { threshold: 0.25 });
+      videos.forEach(function (v) { observer.observe(v); });
+    } else {
+      videos.forEach(function (v) { v.setAttribute('controls', ''); });
+    }
+
+    // Click a clip to toggle play/pause.
+    videos.forEach(function (v) {
+      v.addEventListener('click', function () {
+        if (v.paused) { v.play().catch(function () {}); } else { v.pause(); }
+      });
+      v.style.cursor = 'pointer';
+    });
+  </script>
 
 </body>
 </html>
