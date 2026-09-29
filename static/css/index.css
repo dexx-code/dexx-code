@@ -222,6 +222,21 @@ a.link-pill:focus {
   font-weight: 700;
 }
 
+/* --- Citation ------------------------------------------------------------ */
+
+.bibtex {
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre;
+  overflow-x: auto;
+  border: 1.5px solid #1b1b1b;
+  border-radius: 15px;
+  background: rgba(27, 27, 27, 0.03);
+  padding: 20px 24px;
+  margin: 0 0 40px;
+}
+
 /* --- Figures and media ---------------------------------------------------- */
 
 .media {
